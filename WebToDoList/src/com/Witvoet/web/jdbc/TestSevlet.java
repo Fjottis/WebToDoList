@@ -40,13 +40,15 @@ public class TestSevlet extends HttpServlet {
 		try{
 				myConn= dataSource.getConnection(); 
 				//Step3: create SQL statements
-				String sql = "select * from List"; 
+				String sql = "select * from JavaProject.List"; 
 				myStmt= myConn.createStatement(); 
 				//Step4: Execute SQL query 
 				myRs=myStmt.executeQuery(sql); 
-				//Step5: Process the ResultSet while(myRs.next()){
-				String title = myRs.getString("title");
-				out.println(title); 
+				//Step5: Process the ResultSet 
+				while(myRs.next()){
+					String title = myRs.getString("title");
+					out.println(title); 
+				}
 			}
 		catch(Exception exc){ 
 			System.out.println(exc.getMessage());
