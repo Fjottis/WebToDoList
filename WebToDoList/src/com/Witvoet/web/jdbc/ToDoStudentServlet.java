@@ -50,6 +50,4 @@ public class ToDoStudentServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 			}
 
-
-
 }
