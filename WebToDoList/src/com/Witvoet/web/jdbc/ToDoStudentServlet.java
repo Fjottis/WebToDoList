@@ -44,9 +44,9 @@ public class ToDoStudentServlet extends HttpServlet {
 	}
 	private void listToDo(HttpServletRequest request, HttpServletResponse response)
 			throws Exception{
-			List<ToDoList> todolists = listDbUtil.getStudents(); 
+			List<ToDoList> todolists = listDbUtil.getList(); 
 			request.setAttribute("TODOLIST_LIST", todolists);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/todo-studentbest.jsp"); 
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/todo-student.jsp"); 
 			dispatcher.forward(request, response);
 			}
 

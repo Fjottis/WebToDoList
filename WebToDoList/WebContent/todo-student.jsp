@@ -15,9 +15,15 @@
 <th>Title </th>
 <th>Content</th>
 </tr>
-<c:forEach var="tempTodo" items="${TODOLIST_LIST}" > <tr>
-<td> ${tempStudent.title}</td>
-<td> ${Temptodo.content}</td> 
+<c:forEach var="tempTodo" items="${TODOLIST_LIST }" > <tr>
+	<c:url var="EditLink" value= "EditToDoServlet">
+	<c:param name="ToDoId" value="${tempRodo.title}"/> 
+	</c:url>
+	<tr>
+		<td> ${tempTodo.title}</td>
+		<td> ${tempTodo.content}</td>
+		<td> <a href="${EditLink }"> Edit</a></td>
+    </tr>
               </c:forEach>
       </table>
 </div>
